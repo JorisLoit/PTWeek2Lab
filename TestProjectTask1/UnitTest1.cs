@@ -61,8 +61,7 @@ namespace TestProjectTask1
         [TestMethod]
         public void Deleting()
         {
-            API.service.dsAddUser("Joris", "Loit", 1);
-            API.service.dsAddBook("Odyssey", "Homère", 1);
+           methodGenerateData1();
             API.service.dsDeleteBook(1);
         }
 
