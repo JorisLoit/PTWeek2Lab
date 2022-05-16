@@ -19,12 +19,12 @@ namespace ProjectTask1.Logic
         {
             LogicAPI.dataAPI.Borrow(Title, Author, Name, Surname, idBook, idUser);
         }
-        public void ReturnBook(String Author, String Title, String Name, String Surname, int idBook, int idUser) 
+        public void ReturnBook( String Title, String Author,String Name, String Surname, int idBook, int idUser) 
         {
             LogicAPI.dataAPI.Return(Title, Author, Name, Surname, idBook, idUser);
         }
 
-        public void dsAddBook(String Author, String Title, int idBook)
+        public void dsAddBook( String Title,String Author, int idBook)
         {
             LogicAPI.dataAPI.AddBook(Title, Author, idBook);
         }
