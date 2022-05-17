@@ -37,6 +37,7 @@ namespace TestProjectTask1
             catch (Exception e)
             {
                 Assert.Fail(e.Message);
+
             }
         }
     }
