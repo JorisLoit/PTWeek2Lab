@@ -135,6 +135,9 @@ namespace ProjectTask1.Data
                 return false;
             }
         }
+        public abstract void daBorrow(String Title, String Author, String Name, String Surname, int idBook, int idUser);
+        public abstract void daReturn(String Title, String Author, String Name, String Surname, int idBook, int idUser);
+
      
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ProjectTask1.Data;
 
-namespace ProjectTask1.Logic
+namespace ProjectTask1.Service
 {
     public class BusinessLogicApi
     {
