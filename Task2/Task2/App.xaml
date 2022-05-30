@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:Task2.Presentation"
              Startup="Application_Startup">
     <Application.Resources>
-
+         
     </Application.Resources>
 </Application>
