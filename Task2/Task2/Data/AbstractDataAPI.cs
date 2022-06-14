@@ -8,6 +8,9 @@ using Task2.DataLayer;
 
 namespace Task2.DataLayer
 {
+    /// <summary>
+    /// DataAPI
+    /// </summary>
     public abstract class AbstractDataAPI
     {
 
@@ -37,15 +40,18 @@ namespace Task2.DataLayer
             this.events = this.dataContext.Events.ToList();
         }
 
+        
         public abstract Users FindUser(string name, string surname);
         
+
         public abstract States FindBook(string title, string author);
        
 
-
+       
         public abstract void addUser(Users user);
       
 
+       
         public abstract void addBook(Catalogs catalog);
      
         public abstract void removeUser(string name,string firstname);
@@ -55,7 +61,7 @@ namespace Task2.DataLayer
         public abstract void EditBook(string title,string author,string nTitle,string nAuthor);
         public abstract void EditUser(string name, string surname, string nName, string nSurname);
 
-
+       
         public abstract bool isAvailible(Catalogs book);
         
        

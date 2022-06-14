@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using Task2.DataLayer;
 using Task2.LogicLayer;
+using Task2.Services;
 
 namespace Task2.Presentation.Model
 {
@@ -43,9 +44,9 @@ namespace Task2.Presentation.Model
                 catalogs.Add(book);
                 states.Add(st);
             }
-           
-         
         }
+
+   
 
         public void AddState(State state)
         {
@@ -55,7 +56,6 @@ namespace Task2.Presentation.Model
             }
             states.Add(state);
             businesAPi.service.AddBook(state.Book.Title, state.Book.Author);
-            MessageBox.Show("Added");
 
         }
 
@@ -72,7 +72,6 @@ namespace Task2.Presentation.Model
         {
             users.Add(new User(firstname, surname));
             businesAPi.service.AddUser(firstname, surname);
-            MessageBox.Show("Added");
 
         }
 
@@ -84,7 +83,6 @@ namespace Task2.Presentation.Model
                 {
                     users.Remove(u);
                     businesAPi.dataAPI.removeUser(u.Name, u.Surname);
-                    MessageBox.Show("Removed");
 
                 }
 
@@ -101,7 +99,6 @@ namespace Task2.Presentation.Model
                 
                 catalogs.Remove(c);
                 businesAPi.dataAPI.removeBook(c.Title, c.Author);
-                    MessageBox.Show("Removed");
 
                 }
             }
@@ -117,7 +114,6 @@ namespace Task2.Presentation.Model
                     events.Add(new Borrowing(state, user));
                     state.ChangeState();
                     businesAPi.service.BorrowOneBook(state.Book.Title, state.Book.Author, user.Name, user.Surname);
-                    MessageBox.Show("Borrowed");
 
                 }
             
@@ -134,7 +130,6 @@ namespace Task2.Presentation.Model
                         events.Add(new Returning(state, user));
                         state.ChangeState();
                         businesAPi.service.ReturnOneBook(state.Book.Title, state.Book.Author, user.Name, user.Surname);
-                        MessageBox.Show("Returned");
 
                     });
 
@@ -168,7 +163,6 @@ namespace Task2.Presentation.Model
             User u = USER.Find(x => x.Name == name && x.Surname == firstname);
             u.Surname = nfirstname;
             u.Name = nName;
-            MessageBox.Show("Edited");
             
         }
 
@@ -178,7 +172,6 @@ namespace Task2.Presentation.Model
             Catalog c = CATALOG.Find(x => x.Title == title && x.Author == authoer);
             c.Title = nTitle;
             c.Author = nAuthoer;
-            MessageBox.Show("Edited");
 
         }
 

@@ -20,16 +20,16 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <ComboBox x:Name="CmbBoxBook" ItemsSource="{Binding Path=Catalogs}" SelectedItem="{Binding Path=SelectedCatalog}" SelectionChanged="CmbBoxBook_SelectionChanged" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="0"  VerticalAlignment="Top" Width="248" Margin="0,86,0,0">
+        <ComboBox x:Name="CmbBoxBook" ItemsSource="{Binding Path=Catalogs}" SelectedItem="{Binding Path=SelectedCatalog}" SelectionChanged="CmbBoxBook_SelectionChanged" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="0"  VerticalAlignment="Center" Width="248">
 
         </ComboBox>
-        <Label x:Name="LabelBook" Content="Books :"  Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="0,30,0,0"/>
+        <Label x:Name="LabelBook" Content="Books :"  Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="10,30,0,0"/>
 
-        <ComboBox  x:Name="CmbBoxUser" HorizontalAlignment="Left" ItemsSource="{Binding Path=Users}" SelectedItem="{Binding Path=SelectedUser}" SelectionChanged="CmbBoxUser_SelectionChanged" Grid.Row="0"  VerticalAlignment="Top" Width="248" Margin="4,84,0,0"/>
-        <Label x:Name="LabelUser" Content="Users :" Grid.Row="0" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="25,17,0,0"/>
+        <ComboBox  x:Name="CmbBoxUser" HorizontalAlignment="Center" ItemsSource="{Binding Path=Users}" SelectedItem="{Binding Path=SelectedUser}" SelectionChanged="CmbBoxUser_SelectionChanged" Grid.Column="2" Grid.Row="0"  VerticalAlignment="Center" Width="248"/>
+        <Label x:Name="LabelUser" Content="Users :"  Grid.Column="2" Grid.Row="0" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="10,30,0,0"/>
         <Button Grid.Column="1" Command="{Binding m_command_Borrow}" Content="Borrow" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Center" Width="77" Click="Button_Click"/>
         <Button Grid.Column="1" Command="{Binding m_command_Return}" Content="Return" HorizontalAlignment="Right" Grid.Row="1" VerticalAlignment="Center" Width="77"/>
-        <GroupBox Header="Edit\Remove Book" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="266,0,0,0">
+        <GroupBox Header="Edit\Remove Book" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,266,0">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="62*"></ColumnDefinition>
@@ -55,12 +55,11 @@
 
             </Grid>
         </GroupBox>
-        <GroupBox Header="Edit\Remove User" Grid.Row="1" Margin="-5,0,5,0">
+        <GroupBox Header="Edit\Remove User" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="266,0,0,0">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="69*"></ColumnDefinition>
-                    <ColumnDefinition Width="44*"></ColumnDefinition>
-                    <ColumnDefinition Width="95*"/>
+                    <ColumnDefinition Width="139*"></ColumnDefinition>
                     <ColumnDefinition Width="47*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -70,11 +69,11 @@
 
                 </Grid.RowDefinitions>
                 <Label Content="Firstname:" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Top" Height="26" Width="64"/>
-                <TextBox x:Name="TxtBoxEditFirstname" Grid.Row="0" Grid.Column="1" TextWrapping="Wrap" Text="{Binding Path=EditUser.Name}" Width="Auto" Margin="0,8,16,7" Grid.ColumnSpan="2"/>
+                <TextBox x:Name="TxtBoxEditFirstname" Grid.Row="0" Grid.Column="1" TextWrapping="Wrap" Text="{Binding Path=EditUser.Name}" Width="Auto" Margin="0,8,16,7"/>
 
                 <Label Content="Surname:" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="60"/>
-                <TextBox x:Name="TxtBoxEditSurname" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Text="{Binding Path=EditUser.Surname}" Width="Auto" Margin="0,7,16,7" Grid.ColumnSpan="2"/>
-                <Button x:Name="BtnEditUser" Grid.Column="3" Command="{Binding m_command_EditUser}" Content="Edit" HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Center" Height="20" Width="26"/>
+                <TextBox x:Name="TxtBoxEditSurname" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Text="{Binding Path=EditUser.Surname}" Width="Auto" Margin="0,7,16,7"/>
+                <Button x:Name="BtnEditUser" Grid.Column="2" Command="{Binding m_command_EditUser}" Content="Edit" HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Center" Height="20" Width="26"/>
                 <Button x:Name="BtnRemoveUser" Content="Remove" HorizontalAlignment="Center" Command="{Binding m_command_RemoveUser}"  Grid.Row="2" VerticalAlignment="Center" Height="20" Width="46"/>
 
 
@@ -129,8 +128,8 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <Label Content="Status of selected book :" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="2" Margin="10,71,0,0"/>
-        <Label x:Name="LabelCurrentStatus" Content="{Binding Path=Status}" HorizontalAlignment="Right" Margin="0,0,50,0" Grid.Row="1" VerticalAlignment="Center"/>
+        <Label Content="Status of selected book :" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,54,0,0" Grid.Column="1"/>
+        <Label x:Name="LabelCurrentStatus" Content="{Binding Path=Status}" HorizontalAlignment="Right" Margin="0,62,102,0" VerticalAlignment="Top" Grid.Column="1"/>
 
 
 

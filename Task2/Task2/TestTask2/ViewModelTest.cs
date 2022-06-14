@@ -11,19 +11,28 @@ namespace TestTask2
 
         MainWindowViewModel vwm1 = new MainWindowViewModel();
         MainWindowViewModel vwm2 = new MainWindowViewModel();
+
+        [TestInitialize]
+        public void init()
+        {
+            vwm1.mainModel.myLibrary.AddUser("Joris", "Loit");
+            vwm2.mainModel.myLibrary.AddUser("Joris", "Loit");
+
+        }
+
+
         [TestMethod]
         public void TestMethod1()
         {
-           
+          
 
             MyLibrary lib = vwm1.mainModel.myLibrary;
+          
 
             int initial = lib.STATES.Count;
-            lib.AddState(new State(new Catalog("Book1", "Book1")));
+            lib.AddState(new State(new Catalog("book1", "book1")));
             Assert.IsTrue(lib.STATES.Count == initial+1);
-         
-
-
+            
 
         }
         [TestMethod]
@@ -31,9 +40,9 @@ namespace TestTask2
         {
             MyLibrary lib = vwm1.mainModel.myLibrary;
 
-            lib.Borrow("Book1", "Book1", new User("Joris", "Loit"));
-            Assert.IsTrue(lib.isAvailble("Book1", "Book1") == false);
-            lib.Return("Book1", "Book1", new User("Joris", "Loit"));
+            lib.Borrow("book1", "book1", new User("Joris", "Loit"));
+            Assert.IsTrue(lib.isAvailble("book1", "book1") == false);
+            lib.Return("book1", "book1", new User("Joris", "Loit"));
          
 
         }

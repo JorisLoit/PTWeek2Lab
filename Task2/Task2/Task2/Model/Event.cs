@@ -9,6 +9,7 @@
 
     public class Borrowing : Event
     {
+       
         public Borrowing(State state, User User)
         {
             this.state = state;
@@ -20,6 +21,7 @@
    
     public class Returning : Event
     {
+       
         public Returning(State state, User User)
         {
             this.state = state;
