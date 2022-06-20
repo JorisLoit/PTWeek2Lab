@@ -10,13 +10,18 @@ namespace Task2.Presentation.Model
 {
     public class MainWindowModel
     {
-       public MyLibrary myLibrary;
+        public MyAbstractLib myLibrary;
 
         public MainWindowModel()
         {
             myLibrary = new MyLibrary();
         }
-       
-     
+
+        public MainWindowModel(MyAbstractLib library)
+        {
+            myLibrary = library;
+        }
+
     }
+
 }

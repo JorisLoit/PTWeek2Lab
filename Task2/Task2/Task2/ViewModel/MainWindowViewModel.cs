@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Task2.DataLayer;
 using System.Collections.ObjectModel;
-using Task2.Presentation.Model.Command;
+
 using Task2.Presentation.ViewModel.Base;
 
 namespace Task2.Presentation.ViewModel
@@ -37,7 +37,7 @@ namespace Task2.Presentation.ViewModel
                 m_catalogs = value;
                 RaisePropertyChanged();
             }
-        } 
+        }
 
         private User m_user;
         public User SelectedUser
@@ -84,7 +84,7 @@ namespace Task2.Presentation.ViewModel
             {
                 m_editCatalog = value;
                 RaisePropertyChanged();
-            
+
             }
         }
 
@@ -139,6 +139,13 @@ namespace Task2.Presentation.ViewModel
             init();
         }
 
+        public MainWindowViewModel(MainWindowModel mainWindow)
+        {
+            this.mainModel = mainWindow;
+            m_users = new ObservableCollection<User>(mainModel.myLibrary.USER);
+            m_catalogs = new ObservableCollection<Catalog>(mainModel.myLibrary.CATALOG);
+        }
+
         private void init()
         {
             m_users = new ObservableCollection<User>(mainModel.myLibrary.USER);
@@ -162,5 +169,6 @@ namespace Task2.Presentation.ViewModel
 
     }
 
-   
+
+
 }
